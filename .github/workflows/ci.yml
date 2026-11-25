@@ -1,0 +1,38 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install -c constraints.txt -e ".[dev]"
+      - name: Run tests (includes a full rerun checked against results/*.json)
+        run: pytest -q
+      - name: CLI runs end to end
+        run: |
+          python -m tsvlab.cli simulate --mode control --seed 7 --duration 3600 --out /tmp/data
+          python -m tsvlab.cli bench --dev-only --out /tmp/dev
+
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

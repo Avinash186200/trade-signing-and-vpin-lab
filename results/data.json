@@ -1,0 +1,176 @@
+{
+ "config": {
+  "base_rate": 1.0,
+  "burst_minutes": [
+   5.0,
+   20.0
+  ],
+  "burst_share": [
+   0.15,
+   0.35
+  ],
+  "duration": 23400.0,
+  "episode_alpha": [
+   0.15,
+   0.4
+  ],
+  "episode_minutes": [
+   15.0,
+   35.0
+  ],
+  "episode_move_ticks": [
+   15.0,
+   40.0
+  ],
+  "exo_quote_rate": 1.0,
+  "high_vol_rate_mult": 1.3,
+  "impact_halflife": 40.0,
+  "impact_ticks": 0.12,
+  "inside_prob": 0.25,
+  "inside_tilt": 0.7,
+  "min_gap": 600.0,
+  "mode": "informed",
+  "n_bursts": [
+   2,
+   4
+  ],
+  "n_episodes": [
+   3,
+   5
+  ],
+  "react_lag_mean": 0.15,
+  "react_lag_min": 0.02,
+  "react_prob": 0.5,
+  "regime_mean_high": 1200.0,
+  "regime_mean_low": 2400.0,
+  "sigma_high": 1.0,
+  "sigma_low": 0.4,
+  "size_geom_p": 0.45,
+  "size_lot": 100,
+  "spread_probs_high": [
+   0.3,
+   0.4,
+   0.3
+  ],
+  "spread_probs_low": [
+   0.55,
+   0.3,
+   0.15
+  ],
+  "start_ticks": 5000,
+  "warmup": 1800.0
+ },
+ "default_delay_s": 0.5,
+ "seeds": {
+  "dev": {
+   "control": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+   ],
+   "informed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "holdout": {
+   "control": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008
+   ],
+   "informed": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008
+   ]
+  }
+ },
+ "stats": {
+  "dev_control": {
+   "at_mid_share": 0.083168,
+   "at_quote_share": 0.866647,
+   "burst_trade_share": 0.034028,
+   "bursts": 3.375,
+   "buy_share": 0.498686,
+   "episodes": 0.0,
+   "high_vol_time_share": 0.271912,
+   "informed_trade_share": 0.0,
+   "inside_not_mid_share": 0.050185,
+   "mean_spread_ticks": 1.731185,
+   "price_range_ticks": 168.875,
+   "quotes": 49540.5,
+   "trades": 52357.5,
+   "volume": 11623762.5
+  },
+  "dev_informed": {
+   "at_mid_share": 0.084508,
+   "at_quote_share": 0.863113,
+   "burst_trade_share": 0.03003,
+   "bursts": 3.25,
+   "buy_share": 0.508637,
+   "episodes": 4.25,
+   "high_vol_time_share": 0.32497,
+   "informed_trade_share": 0.101933,
+   "inside_not_mid_share": 0.052379,
+   "mean_spread_ticks": 1.760448,
+   "price_range_ticks": 178.375,
+   "quotes": 52978.25,
+   "trades": 59223.375,
+   "volume": 13158275.0
+  },
+  "holdout_control": {
+   "at_mid_share": 0.084189,
+   "at_quote_share": 0.864891,
+   "burst_trade_share": 0.030785,
+   "bursts": 2.75,
+   "buy_share": 0.498536,
+   "episodes": 0.0,
+   "high_vol_time_share": 0.307212,
+   "informed_trade_share": 0.0,
+   "inside_not_mid_share": 0.05092,
+   "mean_spread_ticks": 1.747694,
+   "price_range_ticks": 148.375,
+   "quotes": 49969.25,
+   "trades": 52796.875,
+   "volume": 11749387.5
+  },
+  "holdout_informed": {
+   "at_mid_share": 0.085859,
+   "at_quote_share": 0.859828,
+   "burst_trade_share": 0.029116,
+   "bursts": 3.0,
+   "buy_share": 0.499513,
+   "episodes": 4.0,
+   "high_vol_time_share": 0.372402,
+   "informed_trade_share": 0.082785,
+   "inside_not_mid_share": 0.054314,
+   "mean_spread_ticks": 1.774313,
+   "price_range_ticks": 193.75,
+   "quotes": 52775.0,
+   "trades": 58668.75,
+   "volume": 13038025.0
+  }
+ }
+}

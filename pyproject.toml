@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsvlab"
+version = "1.0.0"
+description = "Trade-signing rules and VPIN judged against ground truth: a trades-and-quotes simulator with known initiators and planted informed episodes, tick / quote / Lee-Ready / EMO / BVC accuracy, VPIN detection and false alarms, and how signing error reaches order-flow features."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+tsvlab = "tsvlab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
